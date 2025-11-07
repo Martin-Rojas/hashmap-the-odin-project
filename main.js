@@ -9,5 +9,11 @@ hashMap.set(`rmartinez`, `mia`);
 
 console.log(hashMap.buckets);
 
+// test get(key)
 console.log(hashMap.get(`mendez`));
 console.log(hashMap.get(`rojas`));
+
+// test has(key)
+console.log(hashMap.has(`rojas`));
+console.log(hashMap.has(`martin`));
+console.log(hashMap.has(`realMadrid`));

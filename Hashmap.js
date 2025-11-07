@@ -85,4 +85,27 @@ export class HashMap {
     // Not found after checking all
     return null;
   }
+
+  /** Takes a key as an argument and returns true or false
+   * based on whether or not the key is in the hash map. */
+  has(key) {
+    const index = this.hash(key);
+    const bucket = this.buckets[index];
+
+    if (bucket.length === 0 || !bucket) {
+      return false;
+    }
+
+    // Loop through all pairs in the bucket
+    for (let i = 0; i < bucket.length; i++) {
+      const [storedKey] = bucket[i];
+
+      // Compare stored key to search key
+      if (storedKey === key) {
+        return true; // key found → return value
+      }
+    }
+
+    return false;
+  }
 }
