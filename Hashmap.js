@@ -58,4 +58,31 @@ export class HashMap {
       this.resize();
     }
   }
+
+  /* Takes one argument as a key and returns the value that is assigned 
+  to this key. If a key is not found, return null. */
+  get(key) {
+    // Get index
+    const index = this.hash(key);
+    // Get bucket
+    const bucket = this.buckets[index];
+
+    // If bucket empty return null
+    if (bucket.length === 0 || !bucket) {
+      return null;
+    }
+
+    // Loop through all pairs in the bucket
+    for (let i = 0; i < bucket.length; i++) {
+      const [storedKey, storedValue] = bucket[i];
+
+      // Compare stored key to search key
+      if (storedKey === key) {
+        return storedValue; // key found → return value
+      }
+    }
+
+    // Not found after checking all
+    return null;
+  }
 }
