@@ -108,4 +108,45 @@ export class HashMap {
 
     return false;
   }
+
+  /**Takes a key as an argument.
+   * If the given key is in the hash map, it should remove
+   * the entry with that key and return true.
+   * If the key isn’t in the hash map, it should return false. */
+  remove(key) {
+    const index = this.hash(key);
+    const bucket = this.buckets[index];
+
+    if (!bucket || bucket.length === 0) return false;
+
+    // Traverse the bucket to lookup the key
+    // Loop through all pairs in the bucket
+    for (let i = 0; i < bucket.length; i++) {
+      const [storedKey] = bucket[i];
+
+      // Compare stored key to search key
+      if (storedKey === key) {
+        bucket.splice(i, 1); // remove key-value pair
+        this.size--; // decrease total size
+        return true; // key found → return value
+      }
+    }
+
+    // Key not found
+    return false;
+  }
+
+  /** Returns the number of stored keys in the hash map.*/
+  length() {
+    let totalKeys = 0;
+
+    // Traverse the set table
+    this.buckets.forEach((bucket) => {
+        // Check if the bucket exists and has a lenght greater than o
+      if (bucket && bucket.length > 0) {
+        totalKeys += bucket.length;
+      }
+    });
+    return totalKeys;
+  }
 }

@@ -17,3 +17,14 @@ console.log(hashMap.get(`rojas`));
 console.log(hashMap.has(`rojas`));
 console.log(hashMap.has(`martin`));
 console.log(hashMap.has(`realMadrid`));
+
+// test remove(key)
+console.log(hashMap.remove(`rojas`));
+console.log("rojas key is found?" + hashMap.has(`rojas`));
+console.log(hashMap.remove(`car`));
+
+// test Length()
+hashMap.set(`rojas`, `Lizeth`);
+hashMap.set(`rosaj`, `car`);
+console.log(hashMap.buckets);
+console.log(hashMap.length());
