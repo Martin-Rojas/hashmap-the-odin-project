@@ -142,11 +142,19 @@ export class HashMap {
 
     // Traverse the set table
     this.buckets.forEach((bucket) => {
-        // Check if the bucket exists and has a lenght greater than o
+      // Check if the bucket exists and has a lenght greater than o
       if (bucket && bucket.length > 0) {
         totalKeys += bucket.length;
       }
     });
     return totalKeys;
+  }
+  /** Removes all entries in the hash map. */
+  clear() {
+    // Replace the buckets with a new empty array of the same capacity
+    this.buckets = new Array(this.capacity).fill(null).map(() => []);
+
+    // Reset the number of stored pairs
+    this.size = 0;
   }
 }

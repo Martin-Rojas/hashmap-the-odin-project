@@ -28,3 +28,8 @@ hashMap.set(`rojas`, `Lizeth`);
 hashMap.set(`rosaj`, `car`);
 console.log(hashMap.buckets);
 console.log(hashMap.length());
+
+// test clear()
+hashMap.clear();
+console.log(hashMap.length());
+console.log(hashMap.buckets);
