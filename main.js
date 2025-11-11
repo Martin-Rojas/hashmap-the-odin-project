@@ -33,3 +33,11 @@ console.log(hashMap.length());
 hashMap.clear();
 console.log(hashMap.length());
 console.log(hashMap.buckets);
+
+// test keys()
+hashMap.set(`rojas`, `Lizeth`);
+hashMap.set(`rosaj`, `car`);
+hashMap.set(`ash`, `31`);
+console.log(hashMap.buckets);
+console.log(hashMap.length());
+console.log(hashMap.keys());

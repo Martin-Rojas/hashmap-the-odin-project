@@ -157,4 +157,17 @@ export class HashMap {
     // Reset the number of stored pairs
     this.size = 0;
   }
+
+  /** Returns an array containing all the keys inside the hash map. */
+  keys() {
+    let keys = [];
+    // Traverse the set table
+    this.buckets.forEach((bucket) => {
+      // Each bucket may have multiple [key, value] pairs
+      bucket.forEach(([key, val]) => {
+        keys.push(key);
+      });
+    });
+    return keys;
+  }
 }
