@@ -38,6 +38,11 @@ console.log(hashMap.buckets);
 hashMap.set(`rojas`, `Lizeth`);
 hashMap.set(`rosaj`, `car`);
 hashMap.set(`ash`, `31`);
+hashMap.set(`team`, `Real Madrid`);
 console.log(hashMap.buckets);
 console.log(hashMap.length());
 console.log(hashMap.keys());
+
+// test values
+console.log(hashMap.values());
+

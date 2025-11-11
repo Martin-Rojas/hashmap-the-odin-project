@@ -170,4 +170,17 @@ export class HashMap {
     });
     return keys;
   }
+
+  /** Returns an array containing all the values. */
+  values() {
+    let values = [];
+    // Traverse the set table
+    this.buckets.forEach((bucket) => {
+      // Each bucket may have multiple [key, value] pairs
+      bucket.forEach(([key, val]) => {
+        values.push(val);
+      });
+    });
+    return values;
+  }
 }
