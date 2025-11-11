@@ -1,50 +1,26 @@
 import { HashMap } from "./Hashmap.js";
 
-const hashMap = new HashMap();
+// Project test
+const test = new HashMap(); // or HashMap() if using a factory
 
-hashMap.set(`martin`, `rojas`);
-hashMap.set(`rojas`, `Lizeth`);
-hashMap.set(`sajor`, `Julia`);
-hashMap.set(`rmartinez`, `mia`);
+test.set("apple", "red");
+test.set("banana", "yellow");
+test.set("carrot", "orange");
+test.set("dog", "brown");
+test.set("elephant", "gray");
+test.set("frog", "green");
+test.set("grape", "purple");
+test.set("hat", "black");
+test.set("ice cream", "white");
+test.set("jacket", "blue");
+test.set("kite", "pink");
+test.set("lion", "golden");
 
-console.log(hashMap.buckets);
+console.log(test.length());
 
-// test get(key)
-console.log(hashMap.get(`mendez`));
-console.log(hashMap.get(`rojas`));
+test.set("moon", "silver");
 
-// test has(key)
-console.log(hashMap.has(`rojas`));
-console.log(hashMap.has(`martin`));
-console.log(hashMap.has(`realMadrid`));
+console.log(test.buckets);
 
-// test remove(key)
-console.log(hashMap.remove(`rojas`));
-console.log("rojas key is found?" + hashMap.has(`rojas`));
-console.log(hashMap.remove(`car`));
-
-// test Length()
-hashMap.set(`rojas`, `Lizeth`);
-hashMap.set(`rosaj`, `car`);
-console.log(hashMap.buckets);
-console.log(hashMap.length());
-
-// test clear()
-hashMap.clear();
-console.log(hashMap.length());
-console.log(hashMap.buckets);
-
-// test keys()
-hashMap.set(`rojas`, `Lizeth`);
-hashMap.set(`rosaj`, `car`);
-hashMap.set(`ash`, `31`);
-hashMap.set(`team`, `Real Madrid`);
-console.log(hashMap.buckets);
-console.log(hashMap.length());
-console.log(hashMap.keys());
-
-// test values
-console.log(hashMap.values());
-
-// test entries()
-console.log(hashMap.entries());
+console.log(test.length());
+console.log(test.get('moon'));
