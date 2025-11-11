@@ -46,3 +46,5 @@ console.log(hashMap.keys());
 // test values
 console.log(hashMap.values());
 
+// test entries()
+console.log(hashMap.entries());

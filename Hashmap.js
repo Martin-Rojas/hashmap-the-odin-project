@@ -183,4 +183,18 @@ export class HashMap {
     });
     return values;
   }
+
+  /** Returns an array that contains each key, value pair. */
+  entries() {
+    let pairList = [];
+
+    // Traverse the set table
+    this.buckets.forEach((bucket) => {
+        // Each bucket may have multiple [key, value] pairs
+        bucket.forEach(([key, val]) => {
+          pairList.push([key,val]);
+        });
+      });
+      return pairList;
+  }
 }
